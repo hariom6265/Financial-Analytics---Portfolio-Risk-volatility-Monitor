@@ -1,0 +1,625 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0226.1626                               -->
+<workbook original-version='18.1' source-build='2026.1.0 (20261.26.0226.1626)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.IndividualControlFormatting.true...IndividualControlFormatting />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Technology Drop  %' datatype='real' name='[portfolio.csv Parameter]' param-domain-type='range' role='measure' type='quantitative' value='-10.0'>
+        <calculation class='tableau' formula='-10.0' />
+        <range granularity='1.0' max='50.0' min='-50.0' />
+      </column>
+    </datasource>
+    <datasource caption='portfolio' inline='true' name='federated.0mye6c709l37v7184jxro09uotqd' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='portfolio' name='textscan.05whee00y33o4f19qdmnn1i3sibe'>
+            <connection class='textscan' directory='C:/Users/hario/OneDrive/Desktop/Python' filename='portfolio.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.05whee00y33o4f19qdmnn1i3sibe' name='portfolio.csv' table='[portfolio#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+            <column datatype='string' name='Sector' ordinal='0' />
+            <column datatype='integer' name='Value' ordinal='1' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[portfolio.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sector</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sector]</local-name>
+            <parent-name>[portfolio.csv]</parent-name>
+            <remote-alias>Sector</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[portfolio.csv_A86E9CD3530741168359BAE474878BF9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Value]</local-name>
+            <parent-name>[portfolio.csv]</parent-name>
+            <remote-alias>Value</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[portfolio.csv_A86E9CD3530741168359BAE474878BF9]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Calculation1' datatype='real' name='[Calculation_2763943606272004]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Sector] = &quot;Technology&quot; THEN&#13;&#10;    [Value] * (1 + [Parameters].[portfolio.csv Parameter]  / 100)&#13;&#10;ELSE&#13;&#10;    [Value]&#13;&#10;END' />
+      </column>
+      <column caption='Investment' datatype='integer' name='[Value]' role='measure' type='quantitative' />
+      <column caption='portfolio.csv' datatype='table' name='[__tableau_internal_object_id__].[portfolio.csv_A86E9CD3530741168359BAE474878BF9]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/hario/AppData/Local/Temp/TableauTemp/#TableauTemp_1om1t1d0yycs3h1468xh70y7de7y.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/07/2026 03:51:33 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Sector</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Sector]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Sector</remote-alias>
+              <ordinal>0</ordinal>
+              <family>portfolio.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[portfolio.csv_A86E9CD3530741168359BAE474878BF9]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Value</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Value]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Value</remote-alias>
+              <ordinal>1</ordinal>
+              <family>portfolio.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[portfolio.csv_A86E9CD3530741168359BAE474878BF9]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout common-percentage='0.620455' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.379545' show-structure='true' user-set-layout-v2='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='Sector' />
+        <field-sort-custom-order field='Calculation_2763943612006414' />
+        <field-sort-custom-order field='Calculation_2763943606272004' />
+        <field-sort-custom-order field='Calculation_2763943608152072' />
+        <field-sort-custom-order field='Calculation_2763943610531852' />
+        <field-sort-custom-order field='Calculation_2763943605846019' />
+        <field-sort-custom-order field='Value' />
+        <field-sort-custom-order field='Geometry (generated)' />
+        <field-sort-custom-order field='Latitude (generated)' />
+        <field-sort-custom-order field='Longitude (generated)' />
+        <field-sort-custom-order field=':Measure Names' />
+        <field-sort-custom-order field='Multiple Values' />
+      </field-sort-info>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Technology Drop  %' datatype='real' name='[portfolio.csv Parameter]' param-domain-type='range' role='measure' type='quantitative' value='-10.0'>
+          <calculation class='tableau' formula='-10.0' />
+          <range granularity='1.0' max='50.0' min='-50.0' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='portfolio.csv' id='portfolio.csv_A86E9CD3530741168359BAE474878BF9'>
+            <properties context=''>
+              <relation connection='textscan.05whee00y33o4f19qdmnn1i3sibe' name='portfolio.csv' table='[portfolio#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='Sector' ordinal='0' />
+                  <column datatype='integer' name='Value' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='PORTFOLIO BY SECTOR'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;PORTFOLIO BY SECTOR&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='portfolio' name='federated.0mye6c709l37v7184jxro09uotqd' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Technology Drop  %' datatype='real' name='[portfolio.csv Parameter]' param-domain-type='range' role='measure' type='quantitative' value='-10.0'>
+              <calculation class='tableau' formula='-10.0' />
+              <range granularity='1.0' max='50.0' min='-50.0' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0mye6c709l37v7184jxro09uotqd'>
+            <column caption='Calculation1' datatype='real' name='[Calculation_2763943606272004]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Sector] = &quot;Technology&quot; THEN&#13;&#10;    [Value] * (1 + [Parameters].[portfolio.csv Parameter]  / 100)&#13;&#10;ELSE&#13;&#10;    [Value]&#13;&#10;END' />
+            </column>
+            <column datatype='string' name='[Sector]' role='dimension' type='nominal' />
+            <column caption='Investment' datatype='integer' name='[Value]' role='measure' type='quantitative' />
+            <column-instance column='[Sector]' derivation='None' name='[none:Sector:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2763943606272004]' derivation='Sum' name='[sum:Calculation_2763943606272004:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0mye6c709l37v7184jxro09uotqd].[sum:Calculation_2763943606272004:qk]' included-values='in-range'>
+            <min>20000.0</min>
+            <max>45000.0</max>
+          </filter>
+          <slices>
+            <column>[federated.0mye6c709l37v7184jxro09uotqd].[sum:Calculation_2763943606272004:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='parameter-ctrl'>
+            <format attr='title' field='[Parameters].[portfolio.csv Parameter]' value='Technology Drop  %'>
+              <formatted-text>
+                <run>Technology Drop  %</run>
+              </formatted-text>
+            </format>
+            <_.fcp.IndividualControlFormatting.true...format attr='border-width' field='[Parameters].[portfolio.csv Parameter]' value='4' />
+            <_.fcp.IndividualControlFormatting.true...format attr='border-style' field='[Parameters].[portfolio.csv Parameter]' value='solid' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='9' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0mye6c709l37v7184jxro09uotqd].[none:Sector:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0mye6c709l37v7184jxro09uotqd].[sum:Calculation_2763943606272004:qk]</rows>
+        <cols>[federated.0mye6c709l37v7184jxro09uotqd].[none:Sector:nk]</cols>
+      </table>
+      <simple-id uuid='{4F420A68-1718-4503-93B3-FA2664C0B8D3}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='860' maxwidth='650' minheight='560' minwidth='420' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Technology Drop  %' datatype='real' name='[portfolio.csv Parameter]' param-domain-type='range' role='measure' type='quantitative' value='-10.0'>
+          <calculation class='tableau' formula='-10.0' />
+          <range granularity='1.0' max='50.0' min='-50.0' />
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97264' id='7' param='horz' type-v2='layout-flow' w='97538' x='1231' y='1368'>
+            <zone h='97264' id='5' type-v2='layout-basic' w='72923' x='1231' y='1368'>
+              <zone h='97264' id='3' name='PORTFOLIO BY SECTOR' w='72923' x='1231' y='1368'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='97264' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='24615' x='74154' y='1368'>
+              <zone h='14701' id='8' name='PORTFOLIO BY SECTOR' pane-specification-id='9' param='[federated.0mye6c709l37v7184jxro09uotqd].[none:Sector:nk]' type-v2='color' w='24615' x='74154' y='1368'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='8889' id='9' mode='type_in' param='[Parameters].[portfolio.csv Parameter]' type-v2='paramctrl' w='24615' x='74154' y='16069'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='15' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97264' id='14' param='vert' type-v2='layout-flow' w='97538' x='1231' y='1368'>
+                <zone fixed-size='280' h='97264' id='3' is-fixed='true' name='PORTFOLIO BY SECTOR' w='72923' x='1231' y='1368'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='14701' id='8' name='PORTFOLIO BY SECTOR' pane-specification-id='9' param='[federated.0mye6c709l37v7184jxro09uotqd].[none:Sector:nk]' type-v2='color' w='24615' x='74154' y='1368'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8889' id='9' mode='type_in' param='[Parameters].[portfolio.csv Parameter]' type-v2='paramctrl' w='24615' x='74154' y='16069'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{A334DAE2-C63E-4431-8415-05BC76C3AB9E}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='PORTFOLIO BY SECTOR'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='title' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='9' param='[federated.0mye6c709l37v7184jxro09uotqd].[none:Sector:nk]' type='color' />
+            <card mode='type_in' param='[Parameters].[portfolio.csv Parameter]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0mye6c709l37v7184jxro09uotqd].[:Measure Names]</field>
+            <field>[federated.0mye6c709l37v7184jxro09uotqd].[none:Calculation_2763943609847818:nk]</field>
+            <field>[federated.0mye6c709l37v7184jxro09uotqd].[none:Calculation_2763943610265611:nk]</field>
+            <field>[federated.0mye6c709l37v7184jxro09uotqd].[none:Sector:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{10A53611-7F0B-4567-9A0F-C29A9C4D30E7}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1' tab-color='#4f779a'>
+      <viewpoints>
+        <viewpoint name='PORTFOLIO BY SECTOR'>
+          <zoom type='entire-view' />
+          <highlight field='[federated.0mye6c709l37v7184jxro09uotqd].[none:Sector:nk]'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{3CC66F05-6116-4B73-ACBB-025595F30DDB}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAaLklEQVR4nO3dSXAc99nf8W93zw5gsA1WYgcBgqRISiYlSqJkv7Jf2X7f187rlLO8lTc5
+      5K3K6b2kcksqh1SOqRxSlaocUkkqh1TivazVsijbEiXZkihKJEUSEEjs68xg9q1nevnnQIoU
+      RREAsQ45z6dKRQ260f1gpn/T69OtKaUUQtQofb8LEGI/SQBETZMAiJomARA1TQIg9o9SlM0S
+      lu3sWwmefZuzqHml9CKvvPUJh44epa+tjrIWJOxTJHImU59d5uizZ7DScfyN7fh1G7OiiLQ2
+      7WgNEgCxb7zBRhp8Nom1GFc+ncPQ/fhDLidPPUt0ZYXOxXGuL1tY2avk0ouc+e6PiexwDfcN
+      gFIKpWDh80+4NLWKzxfg5OlnaQ3Bu3/4PclChcEj3+DEaD/nz73JWsHGX9/Cc88+ycU//o7V
+      tQz46ugdHMNfWmYmlsXjC/L8898kMfsZF67N4K9r5oUXnsdJL5Jwm+nvCAPw+eR1RkcPklqa
+      5p3zn6Ebfp7/zndoCfkAuPjh2ywniugeP089e4bY7CSDh4/h1x2ujl/nyOHDaLhc/PAcMytp
+      Ij3DPHdylN++/CquL4g33M6Lz51kZWaC85cnCTZ20t0MM3MrVFyNlrYennv6MT54+w/Esya9
+      I8c4eXSYK+ffYX6tgMdfz3PPnyHo0dB12YrcKruUx/UFKRSLhDyKUKSToJZmYTVF74FWChWD
+      SnaJQDhCY3M9Qz1tO1+E+irXVYnVefXb115WMysp9cc3f6nmk2VVyiyrX770lvr03Ovq8kxM
+      ua6tXv7ZT1WqZKmf/+SnynaVik68p86en1VKKTX+/kvqRvLmJF/7fz9TmVuTr+Tj6qe/el1Z
+      jqti05+q189dVivXzql3Li/eLuHlV19Truuon/7f/6NM21HF1LL6+Utnbw9/6bVXlVJKZVc+
+      V7/+/Udq/uoH6tynN9TclT+pP12ZuzlSdk795LU/Kdd1VSaTVo6dUb/5zR9uT6NSTKif/Owl
+      VbFdVS6VlK2USi1cVu9fnFZKKXXtw7fU+YlF5bqOeuOXP1WrubL65S9+oiq2q7LRCfXK2Y/U
+      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
+    </thumbnail>
+    <thumbnail height='192' name='PORTFOLIO BY SECTOR' width='192'>
+      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
+      r3sAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
